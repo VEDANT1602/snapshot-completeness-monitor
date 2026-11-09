@@ -1,0 +1,13 @@
+{
+  "sha256": {
+    "core.py": "7c27255dc069fd86d0fc835992904ea81b3430f4608ad678f205cdffb29ad6b0",
+    "data/snapshots.json": "0107208c1751825b535d786ba4b5a7d9eaf0c26054134e3f54ef70d480c3ed71",
+    "generate.py": "6a345ecf2574fc2e5bbe4abced3e672ec7ee73d3472b00ddade414566d2efc4b",
+    "results/decisions.json": "87130182a0f1d272a3c2cbe7b472f0e6db17d5c3b832af1d60e26fb2e67730a0",
+    "results/event-ledger.json": "ab1139d3d18028474d30a52044b75279afdbcba130054fcdfcf78deeb6bb4823",
+    "results/metrics.json": "d8c713cc280504d2ccf99db0d8e174332fbe62a841c932bb9080c9387e0cf91b",
+    "results/report.md": "f6dff0b644c496966e076be429990b29046145b6a0d7f4240060e31ba4d73461",
+    "run.py": "f428f896d20bb95f3bd95496b62d326642ced681a4f422888c1bc8bc2dcbea70",
+    "support.py": "340246bc4e057054792d1120e1b20b6d6a49b54199edb54ac2ae0cca2d63ca09"
+  }
+}

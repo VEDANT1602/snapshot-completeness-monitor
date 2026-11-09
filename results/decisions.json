@@ -1,0 +1,235 @@
+[
+  {
+    "baseline_events": [
+      {
+        "action": "loss",
+        "member": "c"
+      },
+      {
+        "action": "loss",
+        "member": "d"
+      }
+    ],
+    "case": "partial-page",
+    "expected": [],
+    "guarded": {
+      "events": [],
+      "reason": "incomplete page chain",
+      "status": "refused"
+    }
+  },
+  {
+    "baseline_events": [
+      {
+        "action": "gain",
+        "member": "c"
+      },
+      {
+        "action": "gain",
+        "member": "d"
+      },
+      {
+        "action": "gain",
+        "member": "e"
+      }
+    ],
+    "case": "complete-retry-out-of-order",
+    "expected": [
+      {
+        "action": "gain",
+        "member": "e"
+      }
+    ],
+    "guarded": {
+      "events": [
+        {
+          "action": "gain",
+          "member": "e"
+        }
+      ],
+      "status": "accepted"
+    }
+  },
+  {
+    "baseline_events": [
+      {
+        "action": "loss",
+        "member": "e"
+      }
+    ],
+    "case": "mixed-snapshot",
+    "expected": [],
+    "guarded": {
+      "events": [],
+      "reason": "mixed snapshot versions",
+      "status": "refused"
+    }
+  },
+  {
+    "baseline_events": [
+      {
+        "action": "loss",
+        "member": "b"
+      }
+    ],
+    "case": "complete-removals",
+    "expected": [
+      {
+        "action": "loss",
+        "member": "b"
+      },
+      {
+        "action": "loss",
+        "member": "e"
+      }
+    ],
+    "guarded": {
+      "events": [
+        {
+          "action": "loss",
+          "member": "b"
+        },
+        {
+          "action": "loss",
+          "member": "e"
+        }
+      ],
+      "status": "accepted"
+    }
+  },
+  {
+    "baseline_events": [],
+    "case": "duplicate-retry",
+    "expected": [],
+    "guarded": {
+      "events": [],
+      "status": "duplicate"
+    }
+  },
+  {
+    "baseline_events": [
+      {
+        "action": "gain",
+        "member": "b"
+      },
+      {
+        "action": "gain",
+        "member": "e"
+      }
+    ],
+    "case": "stale-unseen-id",
+    "expected": [],
+    "guarded": {
+      "events": [],
+      "reason": "snapshot sequence did not advance",
+      "status": "refused"
+    }
+  },
+  {
+    "baseline_events": [
+      {
+        "action": "loss",
+        "member": "a"
+      },
+      {
+        "action": "loss",
+        "member": "b"
+      },
+      {
+        "action": "loss",
+        "member": "c"
+      },
+      {
+        "action": "loss",
+        "member": "d"
+      },
+      {
+        "action": "loss",
+        "member": "e"
+      }
+    ],
+    "case": "empty-complete",
+    "expected": [
+      {
+        "action": "loss",
+        "member": "a"
+      },
+      {
+        "action": "loss",
+        "member": "c"
+      },
+      {
+        "action": "loss",
+        "member": "d"
+      }
+    ],
+    "guarded": {
+      "events": [
+        {
+          "action": "loss",
+          "member": "a"
+        },
+        {
+          "action": "loss",
+          "member": "c"
+        },
+        {
+          "action": "loss",
+          "member": "d"
+        }
+      ],
+      "status": "accepted"
+    }
+  },
+  {
+    "baseline_events": [
+      {
+        "action": "gain",
+        "member": "a"
+      },
+      {
+        "action": "gain",
+        "member": "x"
+      }
+    ],
+    "case": "rejoin",
+    "expected": [
+      {
+        "action": "gain",
+        "member": "a"
+      },
+      {
+        "action": "gain",
+        "member": "x"
+      }
+    ],
+    "guarded": {
+      "events": [
+        {
+          "action": "gain",
+          "member": "a"
+        },
+        {
+          "action": "gain",
+          "member": "x"
+        }
+      ],
+      "status": "accepted"
+    }
+  },
+  {
+    "baseline_events": [
+      {
+        "action": "loss",
+        "member": "x"
+      }
+    ],
+    "case": "cursor-cycle",
+    "expected": [],
+    "guarded": {
+      "events": [],
+      "reason": "cursor cycle",
+      "status": "refused"
+    }
+  }
+]

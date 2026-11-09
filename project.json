@@ -1,0 +1,20 @@
+{
+  "name": "snapshot-completeness-monitor",
+  "title": "Snapshot Completeness Monitor",
+  "source_collection": "KalyanM45/AI-Project-Gallery",
+  "source_entry_url": "https://github.com/KalyanM45/GitPulse/blob/8af259174045fce5c081b36e36b407df82834823/README.md",
+  "skills": [
+    "Python",
+    "SQLite",
+    "API pagination",
+    "data quality",
+    "change detection"
+  ],
+  "problem": "Emit membership changes only after a coherent complete snapshot is assembled.",
+  "limitations": [
+    "Original local page fixtures; no GitHub/private audience data or remote API calls."
+  ],
+  "test_command": "python -m unittest discover -s tests -v",
+  "run_command": "python run.py --output runs/ci",
+  "test_count": 12
+}

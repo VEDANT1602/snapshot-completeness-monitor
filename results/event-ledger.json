@@ -1,0 +1,50 @@
+[
+  {
+    "action": "gain",
+    "member": "e",
+    "snapshot_id": "s2",
+    "stream": "fixture"
+  },
+  {
+    "action": "loss",
+    "member": "b",
+    "snapshot_id": "s3",
+    "stream": "fixture"
+  },
+  {
+    "action": "loss",
+    "member": "e",
+    "snapshot_id": "s3",
+    "stream": "fixture"
+  },
+  {
+    "action": "loss",
+    "member": "a",
+    "snapshot_id": "s4",
+    "stream": "fixture"
+  },
+  {
+    "action": "loss",
+    "member": "c",
+    "snapshot_id": "s4",
+    "stream": "fixture"
+  },
+  {
+    "action": "loss",
+    "member": "d",
+    "snapshot_id": "s4",
+    "stream": "fixture"
+  },
+  {
+    "action": "gain",
+    "member": "a",
+    "snapshot_id": "s5",
+    "stream": "fixture"
+  },
+  {
+    "action": "gain",
+    "member": "x",
+    "snapshot_id": "s5",
+    "stream": "fixture"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "comparison": {
+    "complete_snapshot": {
+      "false_loss": 0,
+      "false_positive": 0,
+      "missed": 0,
+      "true_positive": 8
+    },
+    "response_union": {
+      "false_loss": 6,
+      "false_positive": 10,
+      "missed": 1,
+      "true_positive": 7
+    }
+  },
+  "expected_change_events": 8,
+  "final_members": [
+    "a",
+    "x"
+  ],
+  "scope": "Local authored pagination/restart contracts; no external API reliability estimate.",
+  "snapshots_attempted": 9
+}

@@ -1,0 +1,252 @@
+{
+  "cases": [
+    {
+      "expected": [],
+      "id": "partial-page",
+      "pages": [
+        {
+          "cursor": "start",
+          "members": [
+            "a",
+            "b"
+          ],
+          "next_cursor": "p2",
+          "sequence": 2,
+          "snapshot_id": "s2",
+          "terminal": false
+        }
+      ]
+    },
+    {
+      "expected": [
+        {
+          "action": "gain",
+          "member": "e"
+        }
+      ],
+      "id": "complete-retry-out-of-order",
+      "pages": [
+        {
+          "cursor": "p2",
+          "members": [
+            "c",
+            "d",
+            "e"
+          ],
+          "next_cursor": null,
+          "sequence": 2,
+          "snapshot_id": "s2",
+          "terminal": true
+        },
+        {
+          "cursor": "start",
+          "members": [
+            "a",
+            "b"
+          ],
+          "next_cursor": "p2",
+          "sequence": 2,
+          "snapshot_id": "s2",
+          "terminal": false
+        },
+        {
+          "cursor": "p2",
+          "members": [
+            "c",
+            "d",
+            "e"
+          ],
+          "next_cursor": null,
+          "sequence": 2,
+          "snapshot_id": "s2",
+          "terminal": true
+        }
+      ]
+    },
+    {
+      "expected": [],
+      "id": "mixed-snapshot",
+      "pages": [
+        {
+          "cursor": "start",
+          "members": [
+            "a",
+            "b"
+          ],
+          "next_cursor": "p2",
+          "sequence": 3,
+          "snapshot_id": "s3",
+          "terminal": false
+        },
+        {
+          "cursor": "p2",
+          "members": [
+            "c",
+            "d"
+          ],
+          "next_cursor": null,
+          "sequence": 3,
+          "snapshot_id": "different",
+          "terminal": true
+        }
+      ]
+    },
+    {
+      "expected": [
+        {
+          "action": "loss",
+          "member": "b"
+        },
+        {
+          "action": "loss",
+          "member": "e"
+        }
+      ],
+      "id": "complete-removals",
+      "pages": [
+        {
+          "cursor": "start",
+          "members": [
+            "a",
+            "c",
+            "d"
+          ],
+          "next_cursor": null,
+          "sequence": 3,
+          "snapshot_id": "s3",
+          "terminal": true
+        }
+      ]
+    },
+    {
+      "expected": [],
+      "id": "duplicate-retry",
+      "pages": [
+        {
+          "cursor": "start",
+          "members": [
+            "a",
+            "c",
+            "d"
+          ],
+          "next_cursor": null,
+          "sequence": 3,
+          "snapshot_id": "s3",
+          "terminal": true
+        }
+      ]
+    },
+    {
+      "expected": [],
+      "id": "stale-unseen-id",
+      "pages": [
+        {
+          "cursor": "start",
+          "members": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+          ],
+          "next_cursor": null,
+          "sequence": 2,
+          "snapshot_id": "old-but-new-id",
+          "terminal": true
+        }
+      ]
+    },
+    {
+      "expected": [
+        {
+          "action": "loss",
+          "member": "a"
+        },
+        {
+          "action": "loss",
+          "member": "c"
+        },
+        {
+          "action": "loss",
+          "member": "d"
+        }
+      ],
+      "id": "empty-complete",
+      "pages": [
+        {
+          "cursor": "start",
+          "members": [],
+          "next_cursor": null,
+          "sequence": 4,
+          "snapshot_id": "s4",
+          "terminal": true
+        }
+      ]
+    },
+    {
+      "expected": [
+        {
+          "action": "gain",
+          "member": "a"
+        },
+        {
+          "action": "gain",
+          "member": "x"
+        }
+      ],
+      "id": "rejoin",
+      "pages": [
+        {
+          "cursor": "start",
+          "members": [
+            "a",
+            "x"
+          ],
+          "next_cursor": null,
+          "sequence": 5,
+          "snapshot_id": "s5",
+          "terminal": true
+        }
+      ]
+    },
+    {
+      "expected": [],
+      "id": "cursor-cycle",
+      "pages": [
+        {
+          "cursor": "start",
+          "members": [
+            "a"
+          ],
+          "next_cursor": "p2",
+          "sequence": 6,
+          "snapshot_id": "s6",
+          "terminal": false
+        },
+        {
+          "cursor": "p2",
+          "members": [],
+          "next_cursor": "start",
+          "sequence": 6,
+          "snapshot_id": "s6",
+          "terminal": false
+        }
+      ]
+    }
+  ],
+  "initial": [
+    {
+      "cursor": "start",
+      "members": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "next_cursor": null,
+      "sequence": 1,
+      "snapshot_id": "s1",
+      "terminal": true
+    }
+  ]
+}
